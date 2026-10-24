@@ -1,44 +1,47 @@
-# [Project name]
+# Drug Information Explorer
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A local Streamlit learning app for pharmacy students to search and revise ten commonly studied medicines.
 
 ## Run & Operate
 
+- `uv run streamlit run app.py --server.address 0.0.0.0 --server.port 8000` — run the Streamlit app
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+
+The Streamlit app uses the local Python data in `drug_data.py`; it does not need a database, API credentials, or authentication.
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Python 3.11
+- Streamlit
+- Local Python data; no application database or external API
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `app.py` — Streamlit navigation, search, drug detail, flashcards, and quiz
+- `drug_data.py` — editable local medicine summaries and references
+- `README.md` — run instructions, project explanation, and beginner exercises
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Keep the ten-medicine learning dataset local and editable in plain Python.
+- Link summaries to MedlinePlus and DailyMed instead of using paid APIs.
+- Keep the app educational and omit personalized treatment recommendations and doses.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Students can search generic medicine names, review sourced summaries, study with flashcards, take five-question quizzes, and see a daily featured medicine.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Keep the application beginner-friendly, commented, and easy to modify while learning Python.
+- Use a minimal, professional, mobile-friendly interface with white, blue, and green accents.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Run Streamlit on port 8000 so it does not overlap with the shared API server on port 5000.
+- Medication information is educational and can vary by country and product; refer to current local sources for clinical work.
 
 ## Pointers
 

@@ -1,0 +1,18 @@
+[project]
+name = "repl-nix-workspace"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Samarth Ambi", email = "60529139-ambisamarth@users.noreply.replit.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.66.1",
+]
+
+[project.scripts]
+repl-nix-workspace = "repl_nix_workspace:main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
