@@ -309,40 +309,49 @@ def render_quiz_page():
 
 
 def render_about_page():
-    st.title("About this learning tool")
-    st.markdown("### 👨‍💻 About the Creator")
+    st.title("About PharmaNova")
+
+    st.markdown("### Our Purpose")
 
     st.write(
-        "Created by Samarth Ambi, a pharmacy student exploring pharmacology, "
-        "Python, and healthcare technology."
+        "PharmaNova is an interactive learning platform designed "
+        "to make pharmacology easier to explore, understand, and revise. "
+        "It brings essential drug information, revision flashcards, "
+        "and knowledge-based quizzes together in one place."
     )
 
-    st.info(
-        "Built as a personal learning project to make pharmacology revision "
-        "simpler and more interactive."
-    )
-    st.write(
-        "This small, local study app contains ten commonly studied medicines. "
-        "Its summaries are written for revision and link to MedlinePlus and "
-        "DailyMed for further reading."
-    )
-    st.write(
-        "The information is not personalized medical advice. It does not include "
-        "doses or treatment recommendations. Approved uses, warnings, and "
-        "formulations can differ by country and product."
-    )
-    st.markdown("#### How the project is organized")
+    st.markdown("### What PharmaNova Offers")
+
     st.markdown(
-        "- `app.py` builds the Streamlit pages, search, flashcards, and quiz.\n"
-        "- `drug_data.py` stores the local medicine summaries and references.\n"
-        "- `README.md` explains how to run and modify the project."
+        """
+        - **Drug Explorer:** Access essential pharmacological information.
+        - **Flashcards:** Strengthen memory through active recall.
+        - **Quizzes:** Test and reinforce pharmacology knowledge.
+        - **Drug of the Day:** Discover and revise a medicine daily.
+        """
     )
-    st.markdown("#### Data and sources")
+
+    st.markdown("### About the Creator")
+
     st.write(
-        "MedlinePlus provides consumer-friendly medicine information. DailyMed "
-        "provides current U.S. product labeling from the National Library of "
-        "Medicine. Summaries are paraphrases; open the references to review "
-        "the source material."
+        "PharmaNova is a personal educational project created "
+        "by Samarth Ambi, a pharmacy student with an interest "
+        "in pharmacology and healthcare innovation."
+    )
+
+    st.markdown("### References")
+
+    st.write(
+        "Educational content is supported by publicly available "
+        "drug information resources, including MedlinePlus and DailyMed."
+    )
+
+    st.markdown("### Disclaimer")
+
+    st.caption(
+        "PharmaNova is intended for educational purposes only. "
+        "The information provided should not replace professional "
+        "medical advice or official prescribing information."
     )
 
 
@@ -360,15 +369,15 @@ elif page == "Flashcards":
 elif page == "Quiz":
     render_quiz_page()
 else:
-    render_about_page
+    render_about_page()
     st.divider()
 
 st.markdown(
     """
     <div style="text-align: center; color: #64748b; font-size: 13px;">
-        💊 QuickPharma<br>
+         PharmaNova <br>
         Created by <strong>Samarth Ambi</strong><br>
-        Made for learning, not medical advice.
+        Made for learning
     </div>
     """,
     unsafe_allow_html=True
