@@ -1,4 +1,4 @@
-"""Drug Information Explorer: a local Streamlit learning app for pharmacy students."""
+"""Drug Information Explorer: a local Streamlit learning app for pharmacy students By Samarth."""
 
 from datetime import date
 import random
@@ -9,7 +9,7 @@ from drug_data import DRUGS
 
 
 st.set_page_config(
-    page_title="Drug Information Explorer",
+    page_title="PharmaNova By Samarth",
     page_icon="D",
     layout="centered",
 )
@@ -164,8 +164,8 @@ def start_new_quiz():
 
 
 def render_explore_page():
-    st.title("Drug Information Explorer")
-    st.caption("A study companion for essential pharmacology")
+    st.title("PharmaNova")
+    st.caption("Learn Pharmacology • Explore Medicines • Test Your Knowledge")
     st.markdown(
         '<div class="safety-note"><strong>Educational resource only.</strong> '
         "This app is not a medical advice tool. It does not provide "
@@ -310,6 +310,17 @@ def render_quiz_page():
 
 def render_about_page():
     st.title("About this learning tool")
+    st.markdown("### 👨‍💻 About the Creator")
+
+    st.write(
+        "Created by Samarth Ambi, a pharmacy student exploring pharmacology, "
+        "Python, and healthcare technology."
+    )
+
+    st.info(
+        "Built as a personal learning project to make pharmacology revision "
+        "simpler and more interactive."
+    )
     st.write(
         "This small, local study app contains ten commonly studied medicines. "
         "Its summaries are written for revision and link to MedlinePlus and "
@@ -349,4 +360,16 @@ elif page == "Flashcards":
 elif page == "Quiz":
     render_quiz_page()
 else:
-    render_about_page()
+    render_about_page
+    st.divider()
+
+st.markdown(
+    """
+    <div style="text-align: center; color: #64748b; font-size: 13px;">
+        💊 QuickPharma<br>
+        Created by <strong>Samarth Ambi</strong><br>
+        Made for learning, not medical advice.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
