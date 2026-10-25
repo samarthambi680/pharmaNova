@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Drug Information Explorer"
+description = "The existing Python and Streamlit pharmacy study app, packaged as a previewable web service without changing its app.py features."
+version = "1.0.0"
+id = "artifacts/drug-information-explorer"
+router = "path"
+
+[[services]]
+name = "web"
+paths = ["/"]
+localPort = 19910
+
+[services.development]
+run = "uv run --project ../.. streamlit run ../../app.py --server.address 0.0.0.0 --server.port 19910 --server.headless true --server.enableCORS false --server.enableWebsocketCompression false --browser.gatherUsageStats false"
+
+[services.env]
+PORT = "19910"
+BASE_PATH = "/"
+
+[services.production]
+build = ["uv", "sync", "--locked"]
+
+[services.production.run]
+args = ["uv", "run", "streamlit", "run", "app.py", "--server.address", "0.0.0.0", "--server.port", "19910", "--server.headless", "true", "--server.enableCORS", "false", "--server.enableWebsocketCompression", "false", "--browser.gatherUsageStats", "false"]
+
+[services.production.run.env]
+PORT = "19910"
+
+[services.production.health.startup]
+path = "/_stcore/health"
