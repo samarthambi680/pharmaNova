@@ -54,7 +54,7 @@ st.markdown(
       @media (max-width: 640px) {
         .block-container { padding-top: 1.25rem; padding-bottom: 2rem; }
       }
-    </style>
+</style>
     """,
     unsafe_allow_html=True,
 )
